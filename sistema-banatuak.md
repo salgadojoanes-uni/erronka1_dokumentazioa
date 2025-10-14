@@ -1,3 +1,7 @@
+---
+icon: sidebar
+---
+
 # Sistema Banatuak
 
 ### 1. Sistema Banatu baten beharra
