@@ -127,7 +127,9 @@ Erabiltzaile batera joaten gara eta ikusten dugu.
 
 ## 4. Inprimagailuen Informazioa
 
-#### **Windows sistemetan inprimaketa zerbitzuko portuak eta protokoloak**
+### **Portuak eta Protokoloak**
+
+#### **Windows sistemetan**
 
 Windows sistemetan inprimaketa-zerbitzua (Print Server) **TCP/IP** bidez funtzionatzen du:
 
@@ -137,7 +139,7 @@ Windows sistemetan inprimaketa-zerbitzua (Print Server) **TCP/IP** bidez funtzio
   * **IPP (Internet Printing Protocol, portua 631)** — inprimagailu modernoak eta web bidezko zerbitzua
   * **LPD/LPR (portua 515)** — sistema zaharragoekin bateragarritasuna
 
-#### **Linux sistemetan inprimaketa zerbitzuko portuak eta protokoloak**
+#### **Linux sistemetan**
 
 Linux-en **CUPS** (Common UNIX Printing System) erabiltzen da:
 
@@ -146,26 +148,29 @@ Linux-en **CUPS** (Common UNIX Printing System) erabiltzen da:
   * **AppSocket / HP JetDirect (9100/tcp)**
   * **LPD/LPR (515/tcp)**
 * **Administrazio web ataria:**
-  * `http://192.168.10.11:631` (Jitsi Meet zerbitzaria ez bada bakarra, beste Ubuntu bat izan daiteke inprimagailu-zerbitzaria)
+  * `http://192.168.10.15:631` (Cups Ubuntu Zerbitzaria)
 
-#### **Enpresak izango dituen inprimagailuak eta haien kokapena**
+### Inprimagailuak
 
-| Inprimagailua       | Zerbitzaria / IP                 | Kokapena        | Deskribapena                    |
-| ------------------- | -------------------------------- | --------------- | ------------------------------- |
-| **Imp\_Bulegoak**   | `\\192.168.10.10\Imp_Bulegoak`   | Bulego nagusia  | Bulegoetako dokumentu orokorrak |
-| **Imp\_Kalitatea**  | `\\192.168.10.10\Imp_Kalitatea`  | Kalitate saila  | Txosten eta azterketa teknikoak |
-| **Imp\_Produkzioa** | `\\192.168.10.10\Imp_Produkzioa` | Produkzio gunea | Eguneroko ekoizpen-inprimaketak |
+#### **Izena eta haien kokapena**
 
-#### 👥 **Erabiltzaile edo erabiltzaile talde bakoitzari esleitutako inprimagailuarekiko baimenak**
+<table><thead><tr><th width="250.20001220703125">Inprimagailua</th><th width="258.5999755859375">Zerbitzaria / IP</th><th>Kokapena</th></tr></thead><tbody><tr><td>b<strong>ulegoak_inprimagailua</strong></td><td><code>\\192.168.10.10\Bulegoak</code></td><td>Bulego nagusia</td></tr><tr><td><strong>kalitatea_inprimagailua</strong></td><td><code>\\192.168.10.10\Kalitatea</code></td><td>Kalitate saila</td></tr><tr><td><strong>produkzioa_inprimagailua</strong></td><td><code>\\192.168.10.10\Produkzioa</code></td><td>Produkzio gunea</td></tr></tbody></table>
 
-| Taldea / OU     | Inprimagailua   | Baimena                                                 |
-| --------------- | --------------- | ------------------------------------------------------- |
-| **bulegoak**    | Imp\_Bulegoak   | Inprimatu ahal dute                                     |
-| **kalitatea**   | Imp\_Kalitatea  | Inprimatu ahal dute                                     |
-| **produkzioa**  | Imp\_Produkzioa | Inprimatu ahal dute                                     |
-| **taldeburuak** | Guztiak         | Inprimatu eta kudeatu ahal dute (administrazio-baimena) |
+#### **Taldeei esleitutako baimenak**
 
-## CUPS
+| Taldea / OU    | Inprimagailua             | Baimena             |
+| -------------- | ------------------------- | ------------------- |
+| **bulegoak**   | bulegoak\_inprimagailua   | Inprimatu ahal dute |
+| **kalitatea**  | kalitatea\_inprimagailua  | Inprimatu ahal dute |
+| **produkzioa** | produkzioa\_inprimagailua | Inprimatu ahal dute |
+
+
+
+
+
+
+
+## 5. CUPS
 
 apt-get install cups
 
