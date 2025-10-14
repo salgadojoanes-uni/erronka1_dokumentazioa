@@ -10,27 +10,33 @@ icon: sitemap
 **Zerbitzari nagusia:** `BUR-WINSERVER`\
 **IP:** `192.168.10.10`
 
-### **1. Domeinuko OU-ak, erabiltzaileak eta taldeak**
+## **1. Domeinuko OU-ak, erabiltzaileak eta taldeak**
 
-Lehenik
+Lehenik domeinuan burdinola izeneko OU bat sortu dugu gero bertan barruan departamentu bakoitzeko  beste bat jartzeko:
 
-Domeinua hiru **organizational unit (OU)** nagusitan banatu dugu:
+bulegoak OU
 
-1. **bulegoak**
+1. **bulegoak taldea**
    * Erabiltzaileak: _bulegoak1, bulegoak2, bulegoak3_
-   * Taldeburuak: _bulegoak1_
-2. **kalitatea**
-   * Erabiltzaileak: _kalitatea1, kalitatea2, kalitatea3_
-   * Taldeburuak: _kalitatea1_
-3. **produkzioa**
+
+kalitatea OU
+
+1.  **kalitatea taldea**
+
+    * Erabiltzaileak: _kalitatea1, kalitatea2, kalitatea3_
+
+
+
+produkzioa OU
+
+1. **produkzioa taldea**
    * Erabiltzaileak: _produkzioa1, produkzioa2, produkzioa3_
-   * Taldeburuak: _produkzioa1_
 
-Gainera, **taldeburuak** izeneko OU bat dago, non talde bakoitzeko lehenengo erabiltzaileak (_bulegoak1, kalitatea1, produkzioa1_) biltzen dira.
+Gainera, **taldeburuak** izeneko OU bat dago, non talde bakoitzeko buruak edo jefeak (_bulegoak1, kalitatea1, produkzioa1_) biltzen diren.
 
-***
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-#### 🧠 **OU egituraren arrazoia**
+### **OU egituraren arrazoia**
 
 OU egitura hau sortu dugu **sail edo departamentu bakoitzaren arabera kudeaketa errazteko**.\
 Horrela:
@@ -39,9 +45,7 @@ Horrela:
 * Taldeburuak OU berezian bildu dira, administrazio edo kudeaketa-eskubide handiagoak izateko.
 * Egitura argiak mantentzen du sareko antolaketa eta segurtasuna.
 
-***
-
-#### 🧰 **Zerbitzariaren zerbitzuak (ROLak)**
+### **Zerbitzariaren zerbitzuak (ROLak)**
 
 `BUR-WINSERVER` zerbitzariak honako **zerbitzu eta rolak** eskaintzen ditu:
 
@@ -51,30 +55,21 @@ Horrela:
   * Rangoa: `192.168.10.100 – 192.168.10.200`
 * **Fitxategi- eta inprimagailu-zerbitzua**
 * **Bideo-zerbitzua (Jitsi Meet)**, Ubuntu zerbitzarian (IP: `192.168.10.11`)
+* Proxmox ip-a --> **192.168.10.14**
+* Ubuntu server ip-a Cups --> **192.168.10.15**
+* Bulegoak1,2,3 ip-a --> **DHCP 192.168.10.100<-->200**
+* Kalitatea1,2,3 ip-a --> **DHCP 192.168.10.100<-->200**
+* Produkzioa1,2,3 ip-a --> **DHCP 192.168.10.100<-->200**
 
-## Erabiltzaileak, taldeak eta OUak.
+## **2. Erabiltzaileen Konfigurazioa**
 
-### Erabiltzaileak
+**Hemen ikusten dugu nola bulegoak1 erabiltzaileak domeinuko ip tarte batean dagoen, dns bezala 192.168.10.10 duen eta domeinu barruan nola dagoen. Hau bulegoak OU barruan dago goian ikusi dugun bezala. Beste erabiltzaileak berdin.**
 
-<div align="left"><figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure></div>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-<div align="left"><figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure></div>
+## 3. GPO Pertsonalizatuak
 
-<div align="left"><figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure></div>
-
-Hau dira gure erabiltzaileak
-
-
-
-
-
-
-
-
-
-## GPO
-
-### CMD bloqueo
+### CMD erabilera blokeatu
 
 ![](<.gitbook/assets/unknown (53).png>)
 
@@ -92,7 +87,7 @@ eskuineko click, eta sortutako gpo-a editatzen dugu. Gero joan: Configuracion de
 
 ![](<.gitbook/assets/unknown (56).png>)
 
-### FONDO
+### Fondoa
 
 ![](<.gitbook/assets/unknown (60).png>)
 
@@ -128,11 +123,47 @@ Erabiltzaile batera joaten gara eta ikusten dugu.
 
 (8 karakter minimo, karakter especiales, 1 egun mini aldatu ahal izateko, 30 egun adatu obligatorio)
 
-![](<.gitbook/assets/unknown (67).png>)![](<.gitbook/assets/unknown (68).png>)\
-\
+![](<.gitbook/assets/unknown (67).png>)![](<.gitbook/assets/unknown (68).png>)
 
+## 4. Inprimagailuen Informazioa
 
-###
+#### **Windows sistemetan inprimaketa zerbitzuko portuak eta protokoloak**
+
+Windows sistemetan inprimaketa-zerbitzua (Print Server) **TCP/IP** bidez funtzionatzen du:
+
+* **Protokolo nagusiak:**
+  * **SMB (Server Message Block)** — inprimagailu partekatuetarako
+  * **RAW (portua 9100)** — AppSocket/JetDirect motako inprimagailuak
+  * **IPP (Internet Printing Protocol, portua 631)** — inprimagailu modernoak eta web bidezko zerbitzua
+  * **LPD/LPR (portua 515)** — sistema zaharragoekin bateragarritasuna
+
+#### **Linux sistemetan inprimaketa zerbitzuko portuak eta protokoloak**
+
+Linux-en **CUPS** (Common UNIX Printing System) erabiltzen da:
+
+* **Protokoloak:**
+  * **IPP (631/tcp)** — oinarrizko inprimaketa-protokoloa
+  * **AppSocket / HP JetDirect (9100/tcp)**
+  * **LPD/LPR (515/tcp)**
+* **Administrazio web ataria:**
+  * `http://192.168.10.11:631` (Jitsi Meet zerbitzaria ez bada bakarra, beste Ubuntu bat izan daiteke inprimagailu-zerbitzaria)
+
+#### **Enpresak izango dituen inprimagailuak eta haien kokapena**
+
+| Inprimagailua       | Zerbitzaria / IP                 | Kokapena        | Deskribapena                    |
+| ------------------- | -------------------------------- | --------------- | ------------------------------- |
+| **Imp\_Bulegoak**   | `\\192.168.10.10\Imp_Bulegoak`   | Bulego nagusia  | Bulegoetako dokumentu orokorrak |
+| **Imp\_Kalitatea**  | `\\192.168.10.10\Imp_Kalitatea`  | Kalitate saila  | Txosten eta azterketa teknikoak |
+| **Imp\_Produkzioa** | `\\192.168.10.10\Imp_Produkzioa` | Produkzio gunea | Eguneroko ekoizpen-inprimaketak |
+
+#### 👥 **Erabiltzaile edo erabiltzaile talde bakoitzari esleitutako inprimagailuarekiko baimenak**
+
+| Taldea / OU     | Inprimagailua   | Baimena                                                 |
+| --------------- | --------------- | ------------------------------------------------------- |
+| **bulegoak**    | Imp\_Bulegoak   | Inprimatu ahal dute                                     |
+| **kalitatea**   | Imp\_Kalitatea  | Inprimatu ahal dute                                     |
+| **produkzioa**  | Imp\_Produkzioa | Inprimatu ahal dute                                     |
+| **taldeburuak** | Guztiak         | Inprimatu eta kudeatu ahal dute (administrazio-baimena) |
 
 ## CUPS
 

@@ -4,11 +4,11 @@ icon: cloud-binary
 
 # Datu Baseak
 
-### 1. DBKSren aukeraketa:
+## 1. DBKSren aukeraketa:
 
 Proiektu honetarako MariaDB terminaletik instalatua aukeratu dugu. XAMPP paketeak ere MariaDB/MySQL dakarren arren, horrek Apache eta PHP bezalako beste osagai batzuk ere biltzen ditu, eta horrek sistema astunagoa eta batzuetan ezegonkorragoa bihurtzen du. Terminal bidezko instalazio zuzenarekin sistema arinagoa, egonkorragoa eta konfigurazioan kontrol handiagoa lortzen dugu.
 
-### 2. Aukeratutakoaren alde onak eta txarrak honakoak dira:
+## 2. Aukeratutakoaren alde onak eta txarrak honakoak dira:
 
 Alde onak:
 
@@ -27,7 +27,7 @@ Alde txarrak:
 
 Laburbilduz, MariaDB aukera sendoa, ekonomikoa eta eskalagarria da, nahiz eta administrazio tekniko gehiago eskatu.
 
-### 3. Honetarako hardware-eskakizunak eta baliabide ekonomikoak:
+## 3. Honetarako hardware-eskakizunak eta baliabide ekonomikoak:
 
 MariaDB zerbitzari baterako gutxieneko baldintzak (enpresa txiki baterako):
 
@@ -41,7 +41,7 @@ Kostuak:
 * Softwarea: 0 € (MariaDB doakoa da).
 * Hardwarea: Ordenagailu edo zerbitzari zahar bat berrerabiliz → kostu minimoa. Zerbitzari fisiko berri bat erosiz → 500 € inguruan. Hodeiko zerbitzaria erabiliz (AWS, Azure, OVH, …) → 10 € – 50 €/hileko instantiaren tamainaren arabera.
 
-### 4. DBKSren instalazioa:
+## 4. DBKSren instalazioa:
 
 Sistema: Ubuntu Server 24.04.1.
 
@@ -59,17 +59,17 @@ mysql\_secure\_installation aukerak (erabili ditugunak):
 * Root urrunetik sartzea baimendu (Disallow root login remotely? → N).
 * Test datu-basea kendu (Y).
 
-### 5. ntzidentziak konpondu ditu eta behar bezala funtzionatzen duela egiaztatu du:
+## 5. ntzidentziak konpondu ditu eta behar bezala funtzionatzen duela egiaztatu du:
 
 Ez dugu inzidentziarik eduki eta behar bezala funtzionatzen du.
 
 <p align="center"><img src=".gitbook/assets/unknown (14).png" alt="" data-size="original"></p>
 
-### 6. Erregistro-fitxategien eta errore-mezuen informazioa azaldu du:
+## 6. Erregistro-fitxategien eta errore-mezuen informazioa azaldu du:
 
 Goiko berdina.
 
-### 7. Lehenetsitako ezaugarriak (portuak, erabiltzailea...) eta zerbitzua pizteko/itzaltzeko baldintzak:
+## 7. Lehenetsitako ezaugarriak (portuak, erabiltzailea...) eta zerbitzua pizteko/itzaltzeko baldintzak:
 
 Portua: 3306
 
@@ -90,7 +90,7 @@ Firewall-a IP-z mugatua:
 
 * sudo ufw allow from 192.168.10.14 to any port 3306 (IP hori gure wordpress zerbitzarikoa da)
 
-### 8. Konexioei buruzko parametroak:
+## 8. Konexioei buruzko parametroak:
 
 Host: 192.168.10.12
 
@@ -100,7 +100,7 @@ Datu Base izena: burdinola\_db
 
 Adibidea: mysql -h 192.168.10.12 -P 3306 -u bulegoak1 -p burdinola\_db &#x20;
 
-### 9. Erabilitzen ari den errekurtsoak:
+## 9. Erabilitzen ari den errekurtsoak:
 
 Zerbitzuaren egoera ikusteko: systemctl status mariadb
 
@@ -108,23 +108,23 @@ Portua irekita dagoen: ss -lntp | grep 3306
 
 CPU/RAM-aren erabilera: top / htop / ps aux | grep mysqld
 
-### 10. Erabilitako erabiltzaile eta baimenak:
+## 10. Erabilitako erabiltzaile eta baimenak:
 
 Guztira 10 erabiltzaile aukeratu ditugu, guretzat optimoa dena, 3 departamentu bakoitzeko, hau da, 9 guztira eta beste 1 administratzaile generala izango dena. Horiek nahikoak dira guk behar duguna administratzeko. Ondorengoak izango ziren:
 
-#### **Root**
+### **Root**
 
 | Erabiltzailea | Pasahitza     | Baimenak |
 | ------------- | ------------- | -------- |
 | root          | Mari@db123\$$ | Dena     |
 
-#### Admin Generala
+### Admin Generala
 
 | Erabiltzailea    | Pasahitza           | Baimenak |
 | ---------------- | ------------------- | -------- |
 | burdinola\_admin | Burdinol@123\$$\_db | Dena     |
 
-#### Bulegoak
+### Bulegoak
 
 | Erabiltzaileak | Pasahitza         | Baimenak                                             |
 | -------------- | ----------------- | ---------------------------------------------------- |
@@ -132,7 +132,7 @@ Guztira 10 erabiltzaile aukeratu ditugu, guretzat optimoa dena, 3 departamentu b
 | bulegoak2      | Bulego@123\$$\_db |       select,insert,update                           |
 | bulegoak3      | Bulego@123\$$\_db |       select,insert,update                           |
 
-#### Kalitatea
+### Kalitatea
 
 | Erabiltzaileak | Pasahitza           | Baimenak                                               |
 | -------------- | ------------------- | ------------------------------------------------------ |
@@ -140,7 +140,7 @@ Guztira 10 erabiltzaile aukeratu ditugu, guretzat optimoa dena, 3 departamentu b
 | kalitatea2     | Kalitate@123\$$\_db |         select,insert,update                           |
 | kalitatea3     | Kalitate@123\$$\_db |         select,insert,update                           |
 
-#### Produkzioa
+### Produkzioa
 
 | Erabiltzaileak | Pasahitza            | Baimenak                                       |
 | -------------- | -------------------- | ---------------------------------------------- |
@@ -148,7 +148,7 @@ Guztira 10 erabiltzaile aukeratu ditugu, guretzat optimoa dena, 3 departamentu b
 | produkzioa2    | Produkzio@123\$$\_db | select,insert,update                           |
 | produkzioa3    | Produkzio@123\$$\_db | select,insert,update                           |
 
-#### Rolak
+### Rolak
 
 | Rolak       | Erabiltzaileak                                                        |
 | ----------- | --------------------------------------------------------------------- |
