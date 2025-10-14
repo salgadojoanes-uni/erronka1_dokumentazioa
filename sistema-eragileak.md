@@ -4,7 +4,53 @@ icon: sitemap
 
 # Sistema eragileak
 
-###
+#### **Domeinuaren egitura eta zerbitzariaren informazioa**
+
+**Domeinua:** `burdinola.lan`\
+**Zerbitzari nagusia:** `BUR-WINSERVER`\
+**IP:** `192.168.10.10`
+
+### **1. Domeinuko OU-ak, erabiltzaileak eta taldeak**
+
+Lehenik
+
+Domeinua hiru **organizational unit (OU)** nagusitan banatu dugu:
+
+1. **bulegoak**
+   * Erabiltzaileak: _bulegoak1, bulegoak2, bulegoak3_
+   * Taldeburuak: _bulegoak1_
+2. **kalitatea**
+   * Erabiltzaileak: _kalitatea1, kalitatea2, kalitatea3_
+   * Taldeburuak: _kalitatea1_
+3. **produkzioa**
+   * Erabiltzaileak: _produkzioa1, produkzioa2, produkzioa3_
+   * Taldeburuak: _produkzioa1_
+
+Gainera, **taldeburuak** izeneko OU bat dago, non talde bakoitzeko lehenengo erabiltzaileak (_bulegoak1, kalitatea1, produkzioa1_) biltzen dira.
+
+***
+
+#### 🧠 **OU egituraren arrazoia**
+
+OU egitura hau sortu dugu **sail edo departamentu bakoitzaren arabera kudeaketa errazteko**.\
+Horrela:
+
+* Politika eta baimen desberdinak aplikatu daitezke sail bakoitzean.
+* Taldeburuak OU berezian bildu dira, administrazio edo kudeaketa-eskubide handiagoak izateko.
+* Egitura argiak mantentzen du sareko antolaketa eta segurtasuna.
+
+***
+
+#### 🧰 **Zerbitzariaren zerbitzuak (ROLak)**
+
+`BUR-WINSERVER` zerbitzariak honako **zerbitzu eta rolak** eskaintzen ditu:
+
+* **Active Directory Domain Services (AD DS)**
+* **DNS zerbitzaria** (domeinuko izenak ebazteko)
+* **DHCP zerbitzaria** (IP helbideak automatikoki esleitzeko)
+  * Rangoa: `192.168.10.100 – 192.168.10.200`
+* **Fitxategi- eta inprimagailu-zerbitzua**
+* **Bideo-zerbitzua (Jitsi Meet)**, Ubuntu zerbitzarian (IP: `192.168.10.11`)
 
 ## GPO
 
