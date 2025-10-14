@@ -52,6 +52,26 @@ Horrela:
 * **Fitxategi- eta inprimagailu-zerbitzua**
 * **Bideo-zerbitzua (Jitsi Meet)**, Ubuntu zerbitzarian (IP: `192.168.10.11`)
 
+## Erabiltzaileak, taldeak eta OUak.
+
+### Erabiltzaileak
+
+<div align="left"><figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure></div>
+
+<div align="left"><figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure></div>
+
+<div align="left"><figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure></div>
+
+Hau dira gure erabiltzaileak
+
+
+
+
+
+
+
+
+
 ## GPO
 
 ### CMD bloqueo
