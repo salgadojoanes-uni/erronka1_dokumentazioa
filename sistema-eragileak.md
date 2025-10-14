@@ -34,7 +34,7 @@ produkzioa OU
 
 Gainera, **taldeburuak** izeneko OU bat dago, non talde bakoitzeko buruak edo jefeak (_bulegoak1, kalitatea1, produkzioa1_) biltzen diren.
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ### **OU egituraren arrazoia**
 
@@ -65,7 +65,7 @@ Horrela:
 
 **Hemen ikusten dugu nola bulegoak1 erabiltzaileak domeinuko ip tarte batean dagoen, dns bezala 192.168.10.10 duen eta domeinu barruan nola dagoen. Hau bulegoak OU barruan dago goian ikusi dugun bezala. Beste erabiltzaileak berdin.**
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## 3. GPO Pertsonalizatuak
 

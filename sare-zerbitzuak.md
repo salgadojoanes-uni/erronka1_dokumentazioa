@@ -4,6 +4,8 @@ icon: router
 
 # Sare zerbitzuak
 
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 ## 1. IP Helbideak
 
 Zerbitzariaren ip-a --> **192.168.10.10**
