@@ -4,11 +4,11 @@ icon: cloud-binary
 
 # Datu Baseak
 
-### DBKSren aukeraketa:
+### 1. DBKSren aukeraketa:
 
 Proiektu honetarako MariaDB terminaletik instalatua aukeratu dugu. XAMPP paketeak ere MariaDB/MySQL dakarren arren, horrek Apache eta PHP bezalako beste osagai batzuk ere biltzen ditu, eta horrek sistema astunagoa eta batzuetan ezegonkorragoa bihurtzen du. Terminal bidezko instalazio zuzenarekin sistema arinagoa, egonkorragoa eta konfigurazioan kontrol handiagoa lortzen dugu.
 
-### Aukeratutakoaren alde onak eta txarrak honakoak dira:
+### 2. Aukeratutakoaren alde onak eta txarrak honakoak dira:
 
 Alde onak:
 
@@ -27,7 +27,7 @@ Alde txarrak:
 
 Laburbilduz, MariaDB aukera sendoa, ekonomikoa eta eskalagarria da, nahiz eta administrazio tekniko gehiago eskatu.
 
-### Hemen honetarako hardware-eskakizunak eta baliabide ekonomikoak:
+### 3. Honetarako hardware-eskakizunak eta baliabide ekonomikoak:
 
 MariaDB zerbitzari baterako gutxieneko baldintzak (enpresa txiki baterako):
 
@@ -41,7 +41,7 @@ Kostuak:
 * Softwarea: 0 € (MariaDB doakoa da).
 * Hardwarea: Ordenagailu edo zerbitzari zahar bat berrerabiliz → kostu minimoa. Zerbitzari fisiko berri bat erosiz → 500 € inguruan. Hodeiko zerbitzaria erabiliz (AWS, Azure, OVH, …) → 10 € – 50 €/hileko instantiaren tamainaren arabera.
 
-### DBKSren instalazioa:
+### 4. DBKSren instalazioa:
 
 Sistema: Ubuntu Server 24.04.1.
 
@@ -59,21 +59,17 @@ mysql\_secure\_installation aukerak (erabili ditugunak):
 * Root urrunetik sartzea baimendu (Disallow root login remotely? → N).
 * Test datu-basea kendu (Y).
 
-### Intzidentziak konpondu ditu eta behar bezala funtzionatzen duela egiaztatu du.
+### 5. ntzidentziak konpondu ditu eta behar bezala funtzionatzen duela egiaztatu du:
 
 Ez dugu inzidentziarik eduki eta behar bezala funtzionatzen du.
 
-\
+<p align="center"><img src=".gitbook/assets/unknown (14).png" alt="" data-size="original"></p>
 
+### 6. Erregistro-fitxategien eta errore-mezuen informazioa azaldu du:
 
-![](<.gitbook/assets/unknown (14).png>)
+Goiko berdina.
 
-### Erregistro-fitxategien eta errore-mezuen informazioa azaldu du.
-
-\
-
-
-### Lehenetsitako ezaugarriak (portuak, erabiltzailea...) eta zerbitzua pizteko/itzaltzeko baldintzak dokumentatu ditu.&#x20;
+### 7. Lehenetsitako ezaugarriak (portuak, erabiltzailea...) eta zerbitzua pizteko/itzaltzeko baldintzak:
 
 Portua: 3306
 
@@ -94,7 +90,7 @@ Firewall-a IP-z mugatua:
 
 * sudo ufw allow from 192.168.10.14 to any port 3306 (IP hori gure wordpress zerbitzarikoa da)
 
-### Konexioei buruzko parametroak:
+### 8. Konexioei buruzko parametroak:
 
 Host: 192.168.10.12
 
@@ -104,7 +100,7 @@ Datu Base izena: burdinola\_db
 
 Adibidea: mysql -h 192.168.10.12 -P 3306 -u bulegoak1 -p burdinola\_db &#x20;
 
-### Erabilitzen ari den errekurtsoak ere aipatzen dira:
+### 9. Erabilitzen ari den errekurtsoak:
 
 Zerbitzuaren egoera ikusteko: systemctl status mariadb
 
@@ -112,41 +108,15 @@ Portua irekita dagoen: ss -lntp | grep 3306
 
 CPU/RAM-aren erabilera: top / htop / ps aux | grep mysqld
 
-### Erabilitako erabiltzaile eta baimenak:
+### 10. Erabilitako erabiltzaile eta baimenak:
 
 Guztira 10 erabiltzaile aukeratu ditugu, guretzat optimoa dena, 3 departamentu bakoitzeko, hau da, 9 guztira eta beste 1 administratzaile generala izango dena. Horiek nahikoak dira guk behar duguna administratzeko. Ondorengoak izango ziren:
 
-ROOT
+#### **Root**
 
-Erabiltzaile: root\
-Pasahitza: Mari@db123\$$
-
-#### Bulegoak
-
-| <p><br></p> | Erabiltzaileak | Pasahitza         | Baimenak                                             |
-| ----------- | -------------- | ----------------- | ---------------------------------------------------- |
-| <p><br></p> | bulegoak1      | Bulego@123\$$\_db |       select,insert,create, update,update,drop index |
-| <p><br></p> | bulegoak2      | Bulego@123\$$\_db |       select,insert,update                           |
-| <p><br></p> | bulegoak3      | Bulego@123\$$\_db |       select,insert,update                           |
-
-#### Kalitatea
-
-| <p><br></p> | Erabiltzaileak | Pasahitza           | Baimenak                                               |
-| ----------- | -------------- | ------------------- | ------------------------------------------------------ |
-| <p><br></p> | kalitatea1     | Kalitate@123\$$\_db |         select,insert,create, update,update,drop index |
-| <p><br></p> | kalitatea2     | Kalitate@123\$$\_db |         select,insert,update                           |
-| <p><br></p> | kalitatea3     | Kalitate@123\$$\_db |         select,insert,update                           |
-
-\
-
-
-#### Produkzioa
-
-| <p><br></p> | Erabiltzaileak | Pasahitza            | Baimenak                                       |
-| ----------- | -------------- | -------------------- | ---------------------------------------------- |
-| <p><br></p> | produkzioa1    | Produkzio@123\$$\_db | select,insert,create, update,update,drop index |
-| <p><br></p> | produkzioa2    | Produkzio@123\$$\_db | select,insert,update                           |
-| <p><br></p> | produkzioa3    | Produkzio@123\$$\_db | select,insert,update                           |
+| Erabiltzailea | Pasahitza     | Baimenak |
+| ------------- | ------------- | -------- |
+| root          | Mari@db123\$$ | Dena     |
 
 #### Admin Generala
 
@@ -154,14 +124,33 @@ Pasahitza: Mari@db123\$$
 | ---------------- | ------------------- | -------- |
 | burdinola\_admin | Burdinol@123\$$\_db | Dena     |
 
-\
+#### Bulegoak
 
+| Erabiltzaileak | Pasahitza         | Baimenak                                             |
+| -------------- | ----------------- | ---------------------------------------------------- |
+| bulegoak1      | Bulego@123\$$\_db |       select,insert,create, update,update,drop index |
+| bulegoak2      | Bulego@123\$$\_db |       select,insert,update                           |
+| bulegoak3      | Bulego@123\$$\_db |       select,insert,update                           |
 
-Rolak
+#### Kalitatea
 
-\
+| Erabiltzaileak | Pasahitza           | Baimenak                                               |
+| -------------- | ------------------- | ------------------------------------------------------ |
+| kalitatea1     | Kalitate@123\$$\_db |         select,insert,create, update,update,drop index |
+| kalitatea2     | Kalitate@123\$$\_db |         select,insert,update                           |
+| kalitatea3     | Kalitate@123\$$\_db |         select,insert,update                           |
 
+#### Produkzioa
 
-taldeburuak: produkzioa1, kalitatea1, bulegoak1
+| Erabiltzaileak | Pasahitza            | Baimenak                                       |
+| -------------- | -------------------- | ---------------------------------------------- |
+| produkzioa1    | Produkzio@123\$$\_db | select,insert,create, update,update,drop index |
+| produkzioa2    | Produkzio@123\$$\_db | select,insert,update                           |
+| produkzioa3    | Produkzio@123\$$\_db | select,insert,update                           |
 
-langileak: bulegoak2, bulegoak3, produkzioa2, produkzioa3, kalitatea2, kalitatea3
+#### Rolak
+
+| Rolak       | Erabiltzaileak                                                        |
+| ----------- | --------------------------------------------------------------------- |
+| taldeburuak | produkzioa1, kalitatea1, bulegoak1                                    |
+| langileak   | bulegoak2, bulegoak3, produkzioa2, produkzioa3, kalitatea2, kalitatea |
