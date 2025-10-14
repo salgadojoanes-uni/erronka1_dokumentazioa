@@ -27,7 +27,7 @@ Horri esker, enpresak lortzen du:
 
 Sistema hau ezarri da enpresaren barne-azpiegitura banatzeko, Jitsi Meet barne-bileretarako eta Apache web zerbitzaria dokumentazio eta intranet korporatiborako erabiliz.
 
-2\. Birtualizazio tresnaren ezaugarriak
+### 2. Birtualizazio tresnaren ezaugarriak
 
 Sistema banatua Proxmox Virtual Environment oinarrituta dago, birtualizazio-plataforma sendo eta malgua delako.\
 Proxmoxek aukera ematen du makina birtualak (VM) eta edukiontzi arinak (LXC) batera kudeatzeko, eta administrazio zentralizatua eskaintzen du web interfazearen bidez.
@@ -48,7 +48,7 @@ Proxmoxek aukera ematen du makina birtualak (VM) eta edukiontzi arinak (LXC) bat
 Proxmox plataformak bere gain du VM eta LXC edukiontzien monitorizazioa, baliabide banaketa dinamikoa eta sare birtual propioa VLAN 71 barruan.\
 Horri esker, zerbitzu bakoitza isolatuta baina konektatuta dago sare barneko beste osagaiekin.
 
-3\. Birtualizatuko diren zerbitzuak
+### 3. Birtualizatuko diren zerbitzuak
 
 Sistema banatuan bi zerbitzu nagusi ezarri dira, bakoitza bere ingurune birtualean:
 
@@ -75,7 +75,7 @@ Gainera, Proxmox hostean SSH zerbitzua aktibatuta dago administrazio eta mantent
 
 └── 192.168.x.12 → LXC (Ubuntu 24.04) → Apache Web zerbitzaria
 
-4\. Sistema banatuaren funtzionamendua eta abantailak
+### 4. Sistema banatuaren funtzionamendua eta abantailak
 
 #### Funtzionamendua:
 
@@ -103,7 +103,7 @@ Gainera, Proxmox hostean SSH zerbitzua aktibatuta dago administrazio eta mantent
 * Monitorizazioa eta log zentralizatua: Proxmoxetik zuzenean ikusgai.\
 
 
-5\. Ondorioa
+### 5. Ondorioa
 
 Sistema banatu hau ezarri da metal-fabrikaren barne-azpiegitura digitala optimizatzeko.\
 Proxmox plataforman oinarritutako arkitektura honek eskaintzen du:
