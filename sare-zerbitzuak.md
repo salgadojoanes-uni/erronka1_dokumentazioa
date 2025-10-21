@@ -57,6 +57,10 @@ Iraupena: 8h pasa ondoren bota eta berriro konektatzean beste berri bat emango z
 
 ![](<.gitbook/assets/unknown (42).png>)
 
+Erreserba:
+
+<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
 ## **4. Bideo-Zerbitzua | Ubuntu Server Jitsi-meet**
 
 Bideo-zerbitzua **Ubuntu Server** batean instalatuta dago, **192.168.10.11** IP helbidean.\

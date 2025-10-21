@@ -153,9 +153,7 @@ Ez dauka
 \
 
 
-Disquetera:&#x20;
 
-Una disquetera ISST.corp&#x20;
 
 \
 \
@@ -252,11 +250,11 @@ Laneko arriskuen prebentzioari eta ingurumen-babesari buruzko arauak
 
 Hondakinen sistema:
 
-Hondakin organikoen gunea: berdea\
+Hondakin organikoen gunea: marroia\
 \
 
 
-Hondakin birziklagarrien gunea (papera, plastikoa, beira): urdina eta hori\
+Hondakin birziklagarrien gunea (papera, plastikoa, beira): urdina eta horia\
 \
 
 
