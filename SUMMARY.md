@@ -9,3 +9,4 @@
 * [Sistema Banatuak](sistema-banatuak.md)
 * [Segurtasuna](segurtasuna.md)
 * [Iraunkortasuna](iraunkortasuna.md)
+* [WAE](wae.md)
